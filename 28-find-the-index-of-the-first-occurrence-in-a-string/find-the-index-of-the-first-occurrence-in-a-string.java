@@ -1,6 +1,17 @@
 class Solution {
     public int strStr(String haystack, String needle) {
-        int n = haystack.length();
+         int j=needle.length();
+        for (int i = 0; i <= haystack.length()-needle.length(); i++) {
+            String substring=haystack.substring(i,i+needle.length());
+            if (substring.equals(needle))return i;
+            // i++;
+            // j++;
+        }
+        return -1;
+       
+    }
+
+   /*int n = haystack.length();
         for (int i = 0; i < n; i++) {
             if (haystack.charAt(i) == needle.charAt(0)) {
                 if (compare(haystack, needle, i) == true)
@@ -10,8 +21,6 @@ class Solution {
         }
 
         return -1;
-    }
-
     public boolean compare(String haystack, String needle, int idx) {
         int n1 = needle.length();
         int n2 = haystack.length();
@@ -26,5 +35,5 @@ class Solution {
 
         }
         return true;
-    }
+    }*/
 }
